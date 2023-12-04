@@ -1,0 +1,14 @@
+eureka:
+  instance:
+    hostName: home-server-1
+    secure-port-enabled: false
+    non-secure-port-enabled: true
+    statusPageUrl: http://${eureka.instance.hostName}:${server.port}/actuator/info
+    healthCheckUrl: http://${eureka.instance.hostName}:${server.port}/actuator/health
+    homePageUrl: http://${eureka.instance.hostName}:${server.port}/actuator/health
+eureka:
+  client:
+    service-url:
+      default-zone: http://${eureka.instance.hostName}:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
